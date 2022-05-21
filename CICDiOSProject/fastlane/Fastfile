@@ -1,0 +1,55 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :dev do |options|
+    # add actions here: https://docs.fastlane.tools/actions
+    install_provisioning_profile(path: "configs/DemoAppDev.mobileprovision")
+    create_keychain(
+      name: "CICD_Keychain",
+      password: "password",
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: true
+    )
+    import_certificate(
+      certificate_path: "configs/SMDDevCertificates.p12",
+      certificate_password: "smd123",#options[:p12_pw],
+      keychain_password: "password",
+      keychain_name: "CICD_Keychain"
+    )
+
+    increment_version_number_in_xcodeproj(bump_type: "patch", target: "CICDiOSProject")
+
+    gym(
+      scheme: "CICDiOSProject",
+      export_method: "development",
+      clean: true
+    )
+
+    appcenter_upload(
+      api_token: "14c1509d6505cb523455b547cd49db0a6d7e367f",
+      owner_name: "CI-Example",
+      owner_type: "organization",#"user", # Default is user - set to organization for appcenter organizations
+      app_name: "CI-Example-iOS",
+      file: "CICDiOSProject.ipa",
+      notify_testers: false # Set to false if you don't want to notify testers of your new release (default: `false`)
+    )
+
+  end
+end
