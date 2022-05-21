@@ -40,7 +40,6 @@ platform :ios do
 
     run_tests(
       scheme: "CICDiOSProject",
-      devices: ["iPhone 11"],
       result_bundle: true
     )
     # run_tests(
