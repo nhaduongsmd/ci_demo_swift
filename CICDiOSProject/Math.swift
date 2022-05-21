@@ -13,5 +13,5 @@ func sum2Number(_ a: Int, _ b: Int) -> Int {
 
 
 func multiple2Number(_ a: Int, _ b: Int) -> Int {
-    return a * b + 1
+    return a * b
 }
