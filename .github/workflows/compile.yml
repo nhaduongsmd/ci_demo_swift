@@ -19,4 +19,4 @@ jobs:
       # - name: Distribute
       #   run: fastlane distribute app_id:${{ secrets.APP_ID }}
       - name: run_dev
-        run: fastlane dev
+        run: fastlane dev p12_pw:${{ secrets.P12_PW }}

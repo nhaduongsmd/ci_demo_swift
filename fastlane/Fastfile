@@ -29,7 +29,7 @@ platform :ios do
     )
     import_certificate(
       certificate_path: "configs/SMDDevCertificates.p12",
-      certificate_password: "smd123",#options[:p12_pw],
+      certificate_password: options[:p12_pw],
       keychain_password: "password",
       keychain_name: "CICD_Keychain"
     )
