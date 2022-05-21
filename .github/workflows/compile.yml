@@ -18,9 +18,5 @@ jobs:
       #   run: fastlane buildApp
       # - name: Distribute
       #   run: fastlane distribute app_id:${{ secrets.APP_ID }}
-      - name: cd to project foldder
-        run: cd CICdiOSProject
-      - name: list folder
-        run: ls
       - name: run_dev
         run: fastlane dev
