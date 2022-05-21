@@ -1,6 +1,6 @@
 name: iOS CI Example
 
-on: dev
+on: [push]
 
 jobs:
   build:
