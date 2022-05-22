@@ -44,7 +44,7 @@ platform :ios do
     )
     # run_tests(
     #   scheme: "MyAppTests",
-    #   slack_url: "https://hooks.slack.com/services/T03N...",
+    #   slack_url: "https://hooks.slack.com/services/T03N..",
     #   slack_channel: "#channel"
     # )
 
