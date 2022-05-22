@@ -58,8 +58,7 @@ platform :ios do
       api_token: "14c1509d6505cb523455b547cd49db0a6d7e367f",
       owner_name: "CI-Example",
       owner_type: "organization",#"user", # Default is user - set to organization for appcenter organizations
-      app_name: "CI-Example-iOS",
-      file: "CICDiOSProject.ipa",
+      app_name: "CI-Example-iOS", #file: "CICDiOSProject.ipa",
       notify_testers: false # Set to false if you don't want to notify testers of your new release (default: `false`)
     )
 
