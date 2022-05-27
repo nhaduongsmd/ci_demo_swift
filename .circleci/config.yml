@@ -14,7 +14,7 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - ruby/install-deps
+      - run: bundle install
       - run:
           name: fastlane
           command: bundle exec fastlane dev p12_pw:smd123
