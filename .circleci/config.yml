@@ -17,7 +17,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
+          command: bundle exec fastlane $FASTLANE_LANE p12_pw:smd123
       - store_artifacts:
           path: output
       - store_test_results:
