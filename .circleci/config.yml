@@ -17,4 +17,4 @@ jobs:
       - run: bundle install
       - run:
           name: fastlane
-          command: bundle exec fastlane dev ${P12_PW}
+          command: bundle exec fastlane dev p12_pw:${P12_PW}
