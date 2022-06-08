@@ -1,9 +1,6 @@
 name: iOS CI Example
 
-on: 
-  push: 
-    path: 
-      - '**/*.swift'
+on: [push]
 
 jobs:
   build:
