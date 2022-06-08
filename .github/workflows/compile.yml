@@ -10,13 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # - name: CocoaPod Install
-      #   run: pod install
-      # - name: Provisioning profile
-      #   run: fastlane codesigning keychain_password:${{ secrets.KEYCHAIN_PWD }} certificate_password:PWD_P12
-      # - name: Build
-      #   run: fastlane buildApp
-      # - name: Distribute
-      #   run: fastlane distribute app_id:${{ secrets.APP_ID }}
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
       - name: run_dev
         run: fastlane dev p12_pw:${{ secrets.P12_PW }}
