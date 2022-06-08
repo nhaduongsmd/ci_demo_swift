@@ -7,11 +7,11 @@
 
 import Foundation
 
-func sum2Number(_ a: Int, _ b: Int) -> Int {
-    return a + b
+func sum2Number(_ first: Int, _ second: Int) -> Int {
+    return first + second
 }
 
 
-func multiple2Number(_ a: Int, _ b: Int) -> Int {
-    return a * b
+func multiple2Number(_ first: Int, _ second: Int) -> Int {
+    return first * second
 }
