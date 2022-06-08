@@ -1,6 +1,9 @@
 name: iOS CI Example
 
-on: [push]
+on: 
+  push: 
+    path: 
+      - '**/*.swift'
 
 jobs:
   build:
@@ -10,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: GitHub Action for SwiftLint
-        uses: norio-nomura/action-swiftlint@3.2.1
+      - name: Lint code using SwiftLint
+        run: swiftlint lint --reporter github-actions-logging
       - name: run_dev
         run: fastlane dev p12_pw:${{ secrets.P12_PW }}
