@@ -38,10 +38,10 @@ platform :ios do
 
     increment_version_number_in_xcodeproj(bump_type: "patch", target: "CICDiOSProject")
 
-    run_tests(
-      scheme: "CICDiOSProject",
-      result_bundle: true
-    )
+    # run_tests(
+    #   scheme: "CICDiOSProject",
+    #   result_bundle: true
+    # )
     # run_tests(
     #   scheme: "MyAppTests",
     #   slack_url: "https://hooks.slack.com/services/T03N..",
