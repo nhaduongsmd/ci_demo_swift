@@ -14,7 +14,7 @@ jobs:
   steps:
   - script: echo Hello work
     displayName: 'Run a one-line script'
-  - script: fastlane dev p12_pw:smd123
+  - script: fastlane dev p12_pw:$(P12_PW)
     displayName: 'running fastlane'
 
 # - task: Xcode@5
